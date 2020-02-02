@@ -29,8 +29,8 @@ module.exports = plop => {
       {
         type: "addMany",
         destination: "../services/{{serviceName}}",
-        base: "../templates/{{serviceType}}",
-        templateFiles: "../templates/{{serviceType}}"
+        base: "../templates/services/{{serviceType}}",
+        templateFiles: "../templates/services/{{serviceType}}"
       },
       {
         type: "printPkgJsonDeployNote"
