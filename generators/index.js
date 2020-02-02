@@ -1,4 +1,4 @@
-const gitConfigHelper = require("./helpers/git-config");
+const gitConfigHelper = require("plop-helper-git-config");
 const serviceGenerator = require("./service");
 
 module.exports = function(plop) {
