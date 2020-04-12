@@ -1,7 +1,7 @@
-module.exports = plop => {
+module.exports = (plop) => {
   plop.setActionType(
     "printPkgJsonDeployNote",
-    answers =>
+    (answers) =>
       `Remember to add '"deploy:${answers.serviceName}": "lerna run deploy --stream --scope=\\"${answers.serviceName}\\"",' to the root package.json for simplicity.`
   );
 
@@ -15,26 +15,26 @@ module.exports = plop => {
         choices: [
           {
             name: "Google Cloud Function (HTTP)",
-            value: "google-cloud-function-http"
-          }
-        ]
+            value: "google-cloud-function-http",
+          },
+        ],
       },
       {
         type: "input",
         name: "serviceName",
-        message: "What's the new service name? (e.g. my-new-service)"
-      }
+        message: "What's the new service name? (e.g. my-new-service)",
+      },
     ],
     actions: [
       {
         type: "addMany",
         destination: "../services/{{serviceName}}",
         base: "../templates/services/{{serviceType}}",
-        templateFiles: "../templates/services/{{serviceType}}"
+        templateFiles: "../templates/services/{{serviceType}}",
       },
       {
-        type: "printPkgJsonDeployNote"
-      }
-    ]
+        type: "printPkgJsonDeployNote",
+      },
+    ],
   };
 };
