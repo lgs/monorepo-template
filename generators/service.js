@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 module.exports = (plop) => {
   plop.setActionType(
     "printPkgJsonDeployNote",
@@ -12,12 +14,10 @@ module.exports = (plop) => {
         type: "list",
         name: "serviceType",
         message: "Please choose a service",
-        choices: [
-          {
-            name: "Google Cloud Function (HTTP)",
-            value: "google-cloud-function-http",
-          },
-        ],
+        choices: fs.readdirSync("./templates/services").map(serviceFolderName => ({
+          name: serviceFolderName.replace(/-/g, " ").split(" ").map(word => word.charAt(0).toUpperCase() + word.substring(1)).join(" "),
+          value: serviceFolderName,
+        })),
       },
       {
         type: "input",
