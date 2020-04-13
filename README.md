@@ -25,9 +25,7 @@ It all starts with the `./generators/index.js` file.
 
 ### Add a new service template
 
-1. Create a new directory in `./templates`.
-1. Use `*.hbs` and Handlebar template syntax for files with dynamic content.
-1. Add the new service to the `choices` option for the `serviceType` prompt in `./generators/service.js`.
-   * NOTE: The `choices.*.value` property must match the directory name created above.
+1. Create a new directory in `./templates/services`. Lower case letters and hyphens only.
+1. Use the `*.hbs` file extension and Handlebar template syntax for files with dynamic content.
 
-Look at other service templates in `./templates` for further guidance.
+Look at other service templates in `./templates/services` for further guidance.
