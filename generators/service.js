@@ -15,7 +15,7 @@ module.exports = (plop) => {
         name: "serviceType",
         message: "Please choose a service",
         choices: fs.readdirSync("./templates/services").map(serviceFolderName => ({
-          name: serviceFolderName.replace(/-/g, " ").split(" ").map(word => word.charAt(0).toUpperCase() + word.substring(1)).join(" "),
+          name: serviceFolderName.split("-").map(word => word.charAt(0).toUpperCase() + word.substring(1)).join(" "),
           value: serviceFolderName,
         })),
       },
